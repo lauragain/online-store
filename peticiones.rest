@@ -1,0 +1,73 @@
+@host = http://localhost:3000
+
+GET {{host}}/api/products
+
+###
+GET {{host}}/api/products/dpt/moda
+
+###
+GET {{host}}/api/products/price?min=50&max=90
+
+###
+POST {{host}}/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjcyNTQzNjBlZWRmNDkxOTQ1NGFjMWI1IiwiaWF0IjoxNzMwNjM4NzA2LCJleHAiOjE3MzA2MzkwMDZ9.DipAGoEgf2cWJnwPrHitk4KSnREIKm0uy7ahF2zOD5o
+
+{
+    "name": "Cuchillo",
+    "description": "Para cortar cosas",
+    "price": 3,
+    "department": "hogar",
+    "stock": 90,
+    "available": true
+}
+
+###
+PUT {{host}}/api/products/671b89453c3445b535fd408d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjcyNTQzNjBlZWRmNDkxOTQ1NGFjMWI1IiwiaWF0IjoxNzMwNTU0OTM1LCJleHAiOjE3MzA1NTUyMzV9.udTuVAWmJ8KsB1OxuCDlUVV5Um5ot5Cb5IU-xt3yXnk
+
+{
+    "name": "Pantalones verdes"
+}
+
+###
+DELETE {{host}}/api/products/672504745c1e8c91bddafdd3
+
+
+###########################
+#API USERS
+
+POST {{host}}/api/users/register
+Content-Type: application/json
+
+{
+    "username": "mario",
+    "email": "mario@gmail.com",
+    "password": "12345"
+}
+
+###
+
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+    "email": "mario@gmail.com",
+    "password": "12345"
+}
+
+###
+
+PUT {{host}}/api/users/add-product
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjcyNTQzNjBlZWRmNDkxOTQ1NGFjMWI1IiwiaWF0IjoxNzMwNjU0MjU0LCJleHAiOjE3MzA2NTQ1NTR9.A2QBv755mbqUJhraDph3jYR7ML4P-4C9spqge87zmTA
+
+{
+    "product_id": "671b89453c3445b535fd408d"
+}
+
+###
+
+GET {{host}}/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjcyNTQzNjBlZWRmNDkxOTQ1NGFjMWI1IiwiaWF0IjoxNzMwNjU0ODEwLCJleHAiOjE3MzA2NTUxMTB9.PU5-aDkdqWF3dgnujsksu3mS5EO1e5sBp8X7kKIN_58
