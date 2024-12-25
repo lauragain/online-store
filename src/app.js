@@ -7,6 +7,10 @@ app.use(express.json());
 app.use(cors());
 
 // Route configuration
+app.get('/', (req, res) => {
+    res.json({ message: 'Estás accediendo a la API de products' })
+})
+
 app.use('/api', require('./routes/api.routes'))
 
 // Error handler
